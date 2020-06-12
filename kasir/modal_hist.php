@@ -16,7 +16,7 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-lg-12">
-							<p class="pull-right">Date: <?php echo date("F d, Y", strtotime($srow['transaksi_date'])); ?></p>
+							<p class="pull-right">Date: <?php echo date('d F Y h:i A', strtotime($srow['transaksi_date'])); ?></p>
 						</div>
 					</div>
 					<div class="row">
@@ -24,10 +24,10 @@
 							<table width="100%" class="table table-striped table-bordered table-hover">
 								<thead>
 									<tr>
-										<th>Nama Barang</th>
-										<th>Harga</th>
-										<th>Jumlah</th>
-										<th>SubTotal</th>
+										<th align="center">Nama Barang</th>
+										<th align="center">Harga</th>
+										<th align="center">Jumlah</th>
+										<th align="center">SubTotal</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -37,13 +37,13 @@
 									while ($pdrow = mysqli_fetch_array($pd)) {
 									?>
 										<tr>
-											<td><?php echo ucwords($pdrow['nama']); ?></td>
-											<td align="right"><?php echo number_format($pdrow['harga'], 2); ?></td>
-											<td><?php echo $pdrow['transaksi_jumlah']; ?></td>
-											<td align="right">
+											<td align="left"><?php echo ucwords($pdrow['nama']); ?></td>
+											<td align="right">Rp <?php echo number_format($pdrow['harga'], 2, ',', '.'); ?></td>
+											<td align="center"><?php echo $pdrow['transaksi_jumlah']; ?></td>
+											<td align="right"> Rp
 												<?php
 												$subtotal = $pdrow['harga'] * $pdrow['transaksi_jumlah'];
-												echo number_format($subtotal, 2);
+												echo number_format($subtotal, 2, ',', '.');
 												$total += $subtotal;
 												?>
 											</td>
@@ -53,7 +53,7 @@
 									?>
 									<tr>
 										<td align="right" colspan="3"><strong>Total</strong></td>
-										<td align="right"><strong><?php echo number_format($total, 2); ?></strong></td>
+										<td align="right"><strong>RP <?php echo number_format($total, 2, ',', '.'); ?></strong></td>
 									</tr>
 								</tbody>
 							</table>

@@ -21,12 +21,12 @@
 						<table width="100%" class="table table-striped table-bordered table-hover" id="prodTable">
 							<thead>
 								<tr>
-									<th>ID</th>
-									<th>Nama Barang</th>
-									<th>Harga</th>
-									<th>Jumlah</th>
-									<th>Foto</th>
-									<th>Action</th>
+									<th align="center">ID</th>
+									<th align="center">Nama Barang</th>
+									<th align="center">Harga</th>
+									<th align="center">Jumlah</th>
+									<th align="center">Foto</th>
+									<th align="center">Action</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -38,13 +38,13 @@
 									<tr>
 										<td><?php echo $pqrow['productid']; ?></td>
 										<td><?php echo $pqrow['nama']; ?></td>
-										<td><?php echo $pqrow['harga']; ?></td>
-										<td><?php echo $pqrow['jumlah']; ?></td>
-										<td><img src="../<?php if (empty($pqrow['foto'])) {
-																echo "upload/noimage.jpg";
-															} else {
-																echo $pqrow['foto'];
-															} ?>" height="30px" width="30px;"></td>
+										<td align="left">Rp <?php echo number_format($pqrow['harga'], 2, ',', '.'); ?></td>
+										<td align="center"><?php echo $pqrow['jumlah']; ?></td>
+										<td align="center"> <img src="../<?php if (empty($pqrow['foto'])) {
+																				echo "upload/noimage.jpg";
+																			} else {
+																				echo $pqrow['foto'];
+																			} ?>" height="30px" width="30px;"></td>
 										<td>
 											<button class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit_barang<?php echo $pid; ?>"><i class="fa fa-edit"></i> Ubah</button>
 											<button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete_barang<?php echo $pid; ?>"><i class="fa fa-trash"></i> Hapus</button>

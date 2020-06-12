@@ -9,7 +9,7 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-lg-12">
-						<h1 class="page-header">Laporan Penjualan</h1>
+						<h1 class="page-header">Laporan Transaksi</h1>
 					</div>
 				</div>
 				<div class="row">
@@ -18,9 +18,9 @@
 							<thead>
 								<tr>
 									<th class="hidden"></th>
-									<th>Tanggal Penjualan</th>
-									<th>Kasir Penjual</th>
-									<th>Total Harga</th>
+									<th>Tanggal Transaksi</th>
+									<th>Kasir</th>
+									<th>Total Transaksi</th>
 									<th>Action</th>
 								</tr>
 							</thead>
@@ -31,9 +31,9 @@
 								?>
 									<tr>
 										<td class="hidden"></td>
-										<td><?php echo date('M d, Y h:i A', strtotime($sqrow['transaksi_date'])); ?></td>
+										<td><?php echo date('d F Y h:i A', strtotime($sqrow['transaksi_date'])); ?></td>
 										<td><?php echo $sqrow['username']; ?> (<?= $sqrow['nama'] ?>)</td>
-										<td align="right"><?php echo number_format($sqrow['transaksi_total'], 2); ?></td>
+										<td align="left">Rp <?php echo number_format($sqrow['transaksi_total'], 2, ',', '.'); ?></td>
 										<td>
 											<a href="#detail<?php echo $sqrow['transaksi_id']; ?>" data-toggle="modal" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-fullscreen"></span> Tampilkan secara detail</a>
 											<?php include('transaksi_detail.php'); ?>

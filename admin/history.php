@@ -32,7 +32,7 @@
 								?>
 									<tr>
 										<td class="hidden"></td>
-										<td><?php echo date('M d, Y h:i A', strtotime($iqrow['history_date'])); ?></td>
+										<td><?php echo date('d F Y h:i A', strtotime($iqrow['history_date'])); ?></td>
 										<td><?php echo $iqrow['username']; ?></td>
 										<td><?php echo $iqrow['action']; ?></td>
 										<td><?php echo $iqrow['nama_barang']; ?></td>

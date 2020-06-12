@@ -18,10 +18,10 @@
 					<thead>
 						<tr>
 							<th class="hidden"></th>
-							<th>Transaksi ID</th>
-							<th>Tanggal Transaksi</th>
-							<th>Total Transaksi</th>
-							<th>Action</th>
+							<th align="center">Nomor Transaksi</th>
+							<th align="center">Tanggal Transaksi</th>
+							<th align="center">Total Transaksi</th>
+							<th align="center">Action</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -31,9 +31,9 @@
 						?>
 							<tr>
 								<td class="hidden"></td>
-								<td><?php echo ($hrow['transaksi_id']); ?></td>
-								<td><?php echo date("M d, Y - h:i A", strtotime($hrow['transaksi_date'])); ?></td>
-								<td><?php echo number_format($hrow['transaksi_total'], 2); ?></td>
+								<td align="center"><?php echo ($hrow['nomor_transaksi']); ?></td>
+								<td align="center"><?php echo date('d F Y h:i A', strtotime($hrow['transaksi_date'])); ?></td>
+								<td align="right">Rp <?php echo number_format($hrow['transaksi_total'], 2, ',', '.'); ?></td>
 								<td>
 									<a href="#detail<?php echo $hrow['transaksi_id']; ?>" data-toggle="modal" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-fullscreen"></span> Tampilkan secara detail</a>
 									<?php include('modal_hist.php'); ?>

@@ -31,7 +31,7 @@
                     <a href="#"><i class="fa fa-copy fa-fw"></i> Laporan<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="transaksi.php"><i class="fa fa-money fa-fw"></i> Laporan Penjualan</a>
+                            <a href="transaksi.php"><i class="fa fa-money fa-fw"></i> Laporan Transaksi</a>
                         </li>
                         <li>
                             <a href="history.php"><i class="fa fa-dropbox fa-fw"></i> Riwayat Barang</a>
