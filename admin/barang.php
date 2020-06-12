@@ -26,7 +26,7 @@
 									<th>Harga</th>
 									<th>Jumlah</th>
 									<th>Foto</th>
-									<th>Aksi</th>
+									<th>Action</th>
 								</tr>
 							</thead>
 							<tbody>

@@ -26,7 +26,7 @@
 									<th>Username</th>
 									<th>Password</th>
 									<th>Akses</th>
-									<th>Aksi</th>
+									<th>Action</th>
 								</tr>
 							</thead>
 							<tbody>

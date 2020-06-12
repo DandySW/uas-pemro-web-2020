@@ -1,6 +1,6 @@
 <?php include('session.php'); ?>
 <?php include('header.php'); ?>
-<?php $id = $_GET['id']; ?>
+<?php $cat = $_GET['cat']; ?>
 
 <body>
 	<?php include('navbar.php'); ?>
@@ -10,7 +10,7 @@
 		<div>
 			<?php
 			$inc = 4;
-			$query = mysqli_query($conn, "SELECT * FROM product WHERE productid='$id'");
+			$query = mysqli_query($conn, "SELECT * FROM product WHERE categoryid='$cat'");
 			while ($row = mysqli_fetch_array($query)) {
 
 				$inc = ($inc == 4) ? 1 : $inc + 1;
@@ -27,9 +27,9 @@
 						<div style="height: 10px;"></div>
 						<div style="height:40px; width:230px; margin-left:17px;"><?php echo $row['nama']; ?></div>
 						<div style="height: 10px;"></div>
-						<div style="display:none; position:absolute; top:210px; left:10px;" class="well" id="cart<?php echo $row['productid']; ?>">Jumlah: <input type="text" style="width:40px;" id="qty<?php echo $row['productid']; ?>"> <button type="button" class="btn btn-primary btn-sm concart" value="<?php echo $row['productid']; ?>"><i class="fa fa-shopping-cart fa-fw"></i></button></div>
+						<div style="display:none; position:absolute; top:210px; left:10px;" class="well" id="cart<?php echo $row['productid']; ?>">Qty: <input type="text" style="width:40px;" id="qty<?php echo $row['productid']; ?>"> <button type="button" class="btn btn-primary btn-sm concart" value="<?php echo $row['productid']; ?>"><i class="fa fa-shopping-cart fa-fw"></i></button></div>
 						<div style="margin-left:17px; margin-right:17px;">
-							<button type="button" class="btn btn-primary btn-sm addcart" value="<?php echo $row['productid']; ?>"><i class="fa fa-shopping-cart fa-fw"></i> Tambah ke keranjang</button> <span class="pull-right"><strong><?php echo number_format($row['harga'], 2); ?></strong></span>
+							<button type="button" class="btn btn-primary btn-sm addcart" value="<?php echo $row['productid']; ?>"><i class="fa fa-shopping-cart fa-fw"></i> Add to Cart</button> <span class="pull-right"><strong><?php echo number_format($row['harga'], 2); ?></strong></span>
 						</div>
 					</div>
 				</div>

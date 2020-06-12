@@ -3,7 +3,7 @@ include('session.php');
 if (isset($_POST['fcart'])) {
 	$query = mysqli_query($conn, "SELECT * FROM `cart` left join product on product.productid=cart.productid where userid='" . $_SESSION['id'] . "'");
 	if (mysqli_num_rows($query) < 1) {
-		echo "Keranjang penyimpanan kosong <br><br>";
+		echo "Keranjang kosong. <br><br>";
 	} else {
 		while ($row = mysqli_fetch_array($query)) {
 ?>
@@ -15,7 +15,7 @@ if (isset($_POST['fcart'])) {
 					<button type="button" class="btn btn-warning btn-sm minus_qty" value="<?php echo $row['productid']; ?>"><i class="fa fa-minus fa-fw"></i></button>
 				</div>
 				<div class="col-lg-1" style="text-align:center; position:relative; top:4px; left:10px;">
-					<span class="pull-right"><strong><?php echo $row['jumlah']; ?></strong></span>
+					<span class="pull-right"><strong><?php echo $row['cartjumlah']; ?></strong></span>
 				</div>
 				<div class="col-lg-1">
 					<button type="button" class="btn btn-primary btn-sm add_qty" value="<?php echo $row['productid']; ?>"><i class="fa fa-plus fa-fw"></i></button>
@@ -28,7 +28,7 @@ if (isset($_POST['fcart'])) {
 									} ?>" style="width: 30px; height:30px; position:relative; left:5px;" class="thumbnail">
 				</div>
 				<div class="col-lg-7">
-					<span style="font-size:11px; position:relative; left:10px; top:3px;"><?php echo $row['nama']; ?></span>
+					<span style="font-size:12px; position:relative; left:10px; top:3px;"><?php echo $row['nama']; ?></span>
 				</div>
 			</div>
 <?php

@@ -3,6 +3,5 @@
 	if(isset($_POST['rem'])){
 		$id=$_POST['id'];
 		
-		mysqli_query($conn,"delete from `cart` where productid='$id' and userid='".$_SESSION['id']."'");
+		mysqli_query($conn,"DELETE FROM `cart` where productid='$id' and userid='".$_SESSION['id']."'");
 	}
-?>
