@@ -9,7 +9,7 @@
 		<div>
 			<?php
 			$inc = 4;
-			$query = mysqli_query($conn, "SELECT * FROM product");
+			$query = mysqli_query($conn, "SELECT * FROM product order by nama asc");
 			while ($row = mysqli_fetch_array($query)) {
 
 				$inc = ($inc == 4) ? 1 : $inc + 1;

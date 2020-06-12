@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				$_SESSION['id'] = $row['userid'];
 ?>
 				<script>
-					window.alert('Login berhasil. Selamat datang <?= $row['nama'] ?>!');
+					window.alert('Login berhasil. Selamat datang <?= $row['nama'] ?>! (<?= $row['username'] ?>)');
 					window.location.href = 'admin/';
 				</script>
 			<?php
@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				$_SESSION['id'] = $row['userid'];
 			?>
 				<script>
-					window.alert('Login berhasil. Selamat Datang <?= $row['nama'] ?>!');
+					window.alert('Login berhasil. Selamat Datang <?= $row['nama'] ?>! (<?= $row['username'] ?>)');
 					window.location.href = 'kasir/';
 				</script>
 <?php
