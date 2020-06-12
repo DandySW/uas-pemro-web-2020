@@ -6,14 +6,14 @@
 		<div style="height:50px;"></div>
 		<div class="row">
 			<div class="col-lg-12">
-				<a href="index.php" class="btn btn-primary" style="position:relative; left:3px;"><span class="glyphicon glyphicon-arrow-left"></span> Cancel</a>
+				<a href="index.php" class="btn btn-primary" style="position:relative; left:3px;"><span class="glyphicon glyphicon-arrow-left"></span> Batal</a>
 			</div>
 		</div>
 		<div style="height:10px;"></div>
 		<div id="checkout_area"></div>
 		<div style="height:20px;"></div>
 		<div class="row">
-			<button type="button" id="check" class="btn btn-primary pull-right" style="margin-right:15px;"><i class="fa fa-check fa-fw"></i> Confirm</button>
+			<button type="button" id="check" class="btn btn-primary pull-right" style="margin-right:15px;"><i class="fa fa-check fa-fw"></i> Konfirmasi Pembayaran</button>
 		</div>
 	</div>
 	<?php include('script.php'); ?>

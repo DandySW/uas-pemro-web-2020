@@ -6,7 +6,7 @@ if (isset($_POST['ss'])) {
 	if (mysqli_num_rows($query) == 0) {
 
 ?>
-		<div style="position:relative; left:12px; top:10px;">No results found</div>
+		<div style="position:relative; left:12px; top:10px;">Hasil yang dicari tidak ditemukan</div>
 		<?php
 
 	} else {

@@ -6,13 +6,13 @@
 
 	<ul class=" nav navbar-nav">
 		<li id="cartme" style="cursor:pointer">
-			<a id="cart_control"><i class="fa fa-shopping-cart fa-fw"></i> My Cart</a>
+			<a id="cart_control"><i class="fa fa-shopping-cart fa-fw"></i> Keranjang</a>
 		</li>
-		<li id="history"><a href="history.php"><span class="fa fa-list-alt"></span> History</a></li>
+		<li id="history"><a href="history.php"><span class="fa fa-list-alt"></span> Riwayat</a></li>
 		<li>
 			<form class="navbar-form" role="search" method="POST" action="search_result2.php">
 				<div class="input-group" id="searchbox" style="width:500px;">
-					<input type="text" class="form-control" placeholder="Cari Batang..." name="search" id="search">
+					<input type="text" class="form-control" placeholder="Cari Barang..." name="search" id="search">
 					<div class="input-group-btn">
 						<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
 					</div>
