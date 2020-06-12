@@ -8,7 +8,7 @@
 		<div id="page-wrapper">
 			<div class="container-fluid">
 				<div style="height:40px;"></div>
-				<img src="../upload/admin/cover.jpg" class="thumbnail" style="height:430px; width:1030px;">
+				<img src="../upload/admin/cover.jpg" class="thumbnail" style="height:100%; width:100%;">
 			</div>
 		</div>
 	</div>

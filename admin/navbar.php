@@ -1,7 +1,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
     <div class="navbar-header">
-        <a class="navbar-brand" href="https://www.sourcecodester.com/user/224918/track">SourceCodester || POS and Inventory System</a>
+        <a class="navbar-brand" href="index.php">Kasir-Ku | UAS Pemrograman Berbasis Web</a>
     </div>
 
     <ul class="nav navbar-top-links navbar-right">
