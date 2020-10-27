@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2020 at 12:24 PM
+-- Generation Time: Jun 12, 2020 at 04:46 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `pos`
+-- Database: `uas182410101001`
 --
 
 -- --------------------------------------------------------
@@ -33,15 +33,6 @@ CREATE TABLE `cart` (
   `productid` int(11) NOT NULL,
   `cartjumlah` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`cartid`, `userid`, `productid`, `cartjumlah`) VALUES
-(36, 3, 3, 5),
-(37, 3, 4, 8),
-(38, 3, 2, 4);
 
 -- --------------------------------------------------------
 
@@ -79,7 +70,22 @@ INSERT INTO `history` (`historyid`, `userid`, `action`, `productid`, `quantity`,
 (14, 2, 'Melakukan Penjualan', 2, 20, '2020-06-12 15:37:02'),
 (15, 2, 'Melakukan Penjualan', 6, 5, '2020-06-12 15:45:29'),
 (16, 2, 'Melakukan Penjualan', 6, 81, '2020-06-12 15:45:50'),
-(17, 2, 'Melakukan Penjualan', 3, 5, '2020-06-12 15:51:50');
+(17, 2, 'Melakukan Penjualan', 3, 5, '2020-06-12 15:51:50'),
+(18, 2, 'Melakukan Penjualan', 40, 1, '2020-06-12 19:01:07'),
+(19, 2, 'Melakukan Penjualan', 5, 2, '2020-06-12 19:01:07'),
+(20, 2, 'Melakukan Penjualan', 39, 5, '2020-06-12 19:01:07'),
+(21, 2, 'Melakukan Penjualan', 27, 55, '2020-06-12 19:01:07'),
+(22, 2, 'Melakukan Penjualan', 5, 4, '2020-06-12 19:21:25'),
+(23, 2, 'Melakukan Penjualan', 40, 6, '2020-06-12 19:21:25'),
+(24, 3, 'Melakukan Penjualan', 3, 5, '2020-06-12 21:01:00'),
+(25, 3, 'Melakukan Penjualan', 4, 8, '2020-06-12 21:01:00'),
+(26, 3, 'Melakukan Penjualan', 2, 4, '2020-06-12 21:01:00'),
+(27, 3, 'Melakukan Penjualan', 40, 2, '2020-06-12 21:33:26'),
+(28, 3, 'Melakukan Penjualan', 40, 3, '2020-06-12 21:40:37'),
+(29, 3, 'Melakukan Penjualan', 40, 3, '2020-06-12 21:41:59'),
+(30, 3, 'Melakukan Penjualan', 5, 34, '2020-06-12 21:42:25'),
+(31, 2, 'Melakukan Penjualan', 39, 2, '2020-06-12 21:42:45'),
+(32, 2, 'Melakukan Penjualan', 5, 45, '2020-06-12 21:43:47');
 
 -- --------------------------------------------------------
 
@@ -101,10 +107,10 @@ CREATE TABLE `product` (
 
 INSERT INTO `product` (`productid`, `nama`, `harga`, `jumlah`, `foto`) VALUES
 (1, 'Faber Castell Pensil Kayu 2B', 2500, 40, 'upload/5bc5aa2754ae5_1591904322.jpg'),
-(2, 'Penggaris Plastik Butterfly 30 cm', 5000, 80, 'upload/2_1591914046.jpg'),
-(3, 'Penghapus Steadler B40', 1000, 73, 'upload/bc7900edb01131a0d2da42421a619336_1591916986.jpeg'),
-(4, 'Gunting Kertas Kecil', 5000, 70, 'upload/bb449870883920b79a617b357d5ea589_1591917057.jpg'),
-(5, 'Ballpoint Warna', 2000, 75, 'upload/26423674_5b351e42-8236-41ea-a859-e1f3ff8cc391_1334_1000.png_1591917182.jpg'),
+(2, 'Penggaris Plastik Butterfly 30 cm', 5000, 76, 'upload/2_1591914046.jpg'),
+(3, 'Penghapus Steadler B40', 1000, 68, 'upload/bc7900edb01131a0d2da42421a619336_1591916986.jpeg'),
+(4, 'Gunting Kertas Kecil', 5000, 62, 'upload/bb449870883920b79a617b357d5ea589_1591917057.jpg'),
+(5, 'Ballpoint Warna', 2000, -10, 'upload/26423674_5b351e42-8236-41ea-a859-e1f3ff8cc391_1334_1000.png_1591917182.jpg'),
 (6, 'Tipe-Ex Re-type Set', 5000, 85, 'upload/kenko_tip-ex-kenko-fine-point-correction-pen_full02_1591917206.jpg'),
 (7, 'Spidol Snowman', 8500, 79, 'upload/IMG_20160916_105114_01_scaled_1591917520.jpg'),
 (8, 'Lem Glukol', 5000, 83, 'upload/DSC_0386_1591917556.jpg'),
@@ -125,7 +131,7 @@ INSERT INTO `product` (`productid`, `nama`, `harga`, `jumlah`, `foto`) VALUES
 (24, 'Pilot Ballpoint Pen for Switch', 13000, 60, 'upload/P102936539-1'),
 (25, 'Osaka Spirit Knock Type Four Color Oil Ballpoint Pen (3 Sets)', 33000, 70, 'upload/2kP102233092-4.jpg'),
 (26, 'PaperOne Copy Paper A4 70g 1box(5reams)', 220000, 150, 'upload/9bS000004335-6.jpg'),
-(27, 'Bola Dunia Copy Paper A4 70g 1box(5reams)', 220000, 100, 'upload/4vS000005175-2.jpg'),
+(27, 'Bola Dunia Copy Paper A4 70g 1box(5reams)', 220000, 45, 'upload/4vS000005175-2.jpg'),
 (28, 'e-Paper Copy Paper A4 70g 1box(5reams)', 209000, 100, 'upload/npS000019853-7.jpg'),
 (29, 'Bindex Paper Lever Acrh File 717', 19000, 50, 'upload/P101555935-1.jpg'),
 (30, 'Bantex Ordner Economic Lever Arch File', 27500, 60, 'upload/P101514611-5.jpg'),
@@ -137,8 +143,8 @@ INSERT INTO `product` (`productid`, `nama`, `harga`, `jumlah`, `foto`) VALUES
 (36, 'King Jim Pipe Binder 2 Side Open', 90000, 60, 'upload/P101545479-1.jpg'),
 (37, 'monotaro Flat File Set', 50000, 50, 'upload/P101509006-2.jpg'),
 (38, 'Bantex Box File', 36000, 60, 'upload/P101514710-8.jpg'),
-(39, 'Bambi Ordner PVC Lever Arch File 1010', 36000, 50, 'upload/99P101548333-13.jpg'),
-(40, 'Bambi Business File A4', 5500, 100, 'upload/P101548227-1.jpg'),
+(39, 'Bambi Ordner PVC Lever Arch File 1010', 36000, 43, 'upload/99P101548333-13.jpg'),
+(40, 'Bambi Business File A4', 5500, 85, 'upload/P101548227-1.jpg'),
 (41, 'King Jim Sheet Protector A4', 29000, 60, 'upload/P101002915-1.jpg'),
 (42, 'Nice Facial Tissue', 18000, 70, 'upload/P101560366-1.jpg'),
 (44, 'Nagata Sapu Nylon', 46000, 60, 'upload/P101574219-1.jpg'),
@@ -201,7 +207,13 @@ INSERT INTO `transaksi` (`transaksi_id`, `nomor_transaksi`, `userid`, `transaksi
 (10, 242865, 2, 25000, '2020-06-12 15:44:17'),
 (11, 246275, 2, 25000, '2020-06-12 15:45:29'),
 (12, 374901, 2, 405000, '2020-06-12 15:45:50'),
-(13, 775134, 2, 5000, '2020-06-12 15:51:49');
+(13, 775134, 2, 5000, '2020-06-12 15:51:49'),
+(14, 768515, 2, 12289500, '2020-06-12 19:01:06'),
+(15, 826040, 2, 41000, '2020-06-12 19:21:25'),
+(16, 922888, 3, 65000, '2020-06-12 21:01:00'),
+(17, 549421, 3, 0, '2020-06-12 21:01:45'),
+(18, 362980, 3, 11000, '2020-06-12 21:33:26'),
+(19, 519172, 2, 90000, '2020-06-12 21:43:46');
 
 -- --------------------------------------------------------
 
@@ -229,7 +241,18 @@ INSERT INTO `transaksi_detail` (`transaksi_detail_id`, `transaksi_id`, `producti
 (6, 9, 2, 20),
 (7, 11, 6, 5),
 (8, 12, 6, 81),
-(9, 13, 3, 5);
+(9, 13, 3, 5),
+(10, 14, 40, 1),
+(11, 14, 5, 2),
+(12, 14, 39, 5),
+(13, 14, 27, 55),
+(14, 15, 5, 4),
+(15, 15, 40, 6),
+(16, 16, 3, 5),
+(17, 16, 4, 8),
+(18, 16, 2, 4),
+(19, 18, 40, 2),
+(24, 19, 5, 45);
 
 -- --------------------------------------------------------
 
@@ -316,13 +339,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cartid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `cartid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `history`
 --
 ALTER TABLE `history`
-  MODIFY `historyid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `historyid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -340,13 +363,13 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `transaksi_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `transaksi_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `transaksi_detail`
 --
 ALTER TABLE `transaksi_detail`
-  MODIFY `transaksi_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `transaksi_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `user`

@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 
 //authcheck admin
 if (isset($_SESSION['userid'])) {

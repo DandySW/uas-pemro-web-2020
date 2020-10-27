@@ -1,5 +1,6 @@
 <?php
 include('session.php');
+
 if (isset($_POST['cart'])) {
 	$id = $_POST['id'];
 	$qty = $_POST['qty'];

@@ -42,11 +42,62 @@ if (isset($_POST['check'])) {
 					<td colspan="5"><span class="pull-right"><strong>Total Keseluruhan</strong></span></td>
 					<td align="right"><strong>Rp <span id="total"><?php echo number_format($total, 2); ?></span><strong></td>
 				</tr>
+				<!-- <tr>
+					<td colspan="5"><span class="pull-right"><strong>Bayar</strong></span></td>
+					<td><span class="pull-right"> <input type="text" id="bayar" name="bayar" class="form-control"></span></td>
+				</tr> -->
 			</form>
 		</tbody>
 	</table>
 <?php
 }
-
-
 ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script type="text/javascript">
+		//inisialisasi inputan
+		var bayar = document.getElementById('bayar');
+
+		bayar.addEventListener('keyup', function(e) {
+			bayar.value = formatRupiah(this.value, 'Rp. ');
+			//harga = cleanRupiah(dengan_rupiah, value);
+			//calculate(harga,service.value);
+		})
+
+		//GENERATE DARI INPUTAN ANGKA MENJADI FORMAT cleanRupiah
+
+		function formatRupiah(angka, prefix) {
+			var number_string = angka.replace(/[^,\d]/g, '').toString(),
+				split = number_string.split(','),
+				sisa = split[0].length % 3,
+				rupiah = split[0].substr(0, sisa),
+				ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+			if (ribuan) {
+				separator = sisa ? '.' : '';
+				rupiah += separator + ribuan.join('.');
+			}
+
+			rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+			return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+		}
+
+		//generate dari inputan rupiah menjadi angka
+
+		function cleanRupiah(rupiah) {
+			var clean = rupiah.replace(/\D/g, '');
+			return clean;
+			//console.log(clean);
+		}
+	</script>
+</body>
+
+</html>

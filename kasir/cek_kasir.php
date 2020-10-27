@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 
 //authcheck kasir
 if (isset($_SESSION['userid'])) {

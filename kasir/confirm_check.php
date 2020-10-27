@@ -11,7 +11,7 @@ if (preg_match("/^[0-9,]+$/", $total)) {
 $nomor = rand(111111, 999999);
 
 //tabel transaksi
-mysqli_query($conn, "INSERT INTO transaksi (nomor_transaksi,userid, transaksi_total, transaksi_date) values ('$nomor','" . $_SESSION['id'] . "', '$new', NOW())");
+mysqli_query($conn, "INSERT INTO transaksi (nomor_transaksi,userid, transaksi_total, transaksi_date) values ('$nomor','" . $_SESSION['id'] . "', '$new', NOW())", $bayar);
 $sid = mysqli_insert_id($conn);
 
 $query = mysqli_query($conn, "SELECT * FROM cart WHERE userid='" . $_SESSION['id'] . "'");
